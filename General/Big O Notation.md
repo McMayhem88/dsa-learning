@@ -22,7 +22,7 @@ ___
 
 ### Time Complexity
 
-Measures how the runtime of an algorithm increases with the input size. For example, a linear time algorithm ($O(n)$) will perform roughly twice as many operations if the input size doubles.
+Measures how the runtime of an algorithm increases with the input size. For example, a linear time algorithm ( $O(n)$ ) will perform roughly twice as many operations if the input size doubles.
 
 ### Space Complexity
 
@@ -239,16 +239,16 @@ ___
      Constant-time operations (like arithmetic operations or assignments) are $O(1)$.
    - **Loops:**
       - A single loop over $n$ elements is $O(n)$.
-      - Nested loops multiply their complexities (e.g., two nested loops are $O(n × n) = O(n^2)$).
+      - Nested loops multiply their complexities (e.g., two nested loops are $O(n × n) = O(n^2)$ ).
    - **Recursive Calls:**  
-     Analyze the recurrence relation (for example, $T(n) = 2T(n/2) + O(n)$ for `merge sort` yields $O(n \log(n))$).
+     Analyze the recurrence relation (for example, $T(n) = 2T(n/2) + O(n)$ for `merge sort` yields $O(n \log(n))$ ).
    - **Function Calls:**  
      Consider the complexity of called functions if their cost isn’t $O(1)$.
 
 3. **Combine the Steps:**
    - When operations are performed sequentially, add their complexities.  
      For instance, $O(n) + O(n)$ is still $O(n)$.
-   - When operations are nested, multiply their complexities (e.g., $O(n)$ inside another $O(n)$ loop gives $O(n^2)$).
+   - When operations are nested, multiply their complexities (e.g., $O(n)$ inside another $O(n)$ loop gives $O(n^2)$ ).
 
 4. **Drop Constants and Lower Order Terms:**  
    - Big O notation abstracts away constants and less significant terms.  
