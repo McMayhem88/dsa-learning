@@ -1,0 +1,24 @@
+### JetBrains ###
+/.idea
+*.iml
+
+### VS Code ###
+/.vscode
+
+### Node.js ###
+/dist
+/node_modules
+/build
+
+### Logs ###
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+### Temporary Stuff ###
+.temp
+.tmp
