@@ -22,9 +22,7 @@ ___
 
 ### Space Complexity
 
-$O(n)$
-
-At a minimum, space for the keys and values plus overhead for the buckets. Additionally, occasional resizing incurs extra space cost temporarily.
+$O(n)$ - At a minimum, space for the keys and values plus overhead for the buckets. Additionally, occasional resizing incurs extra space cost temporarily.
 
 ___
 
@@ -35,7 +33,7 @@ ___
 
 ## Pitfalls and Caveats
 - **Worst-Case Performance:**
-    - Although average-case is O(1), worst-case degrades to O(n) if many collisions occur. This is rare with good hash functions and proper resizing.
+    - Although average-case is $O(1)$, worst-case degrades to $O(n)$ if many collisions occur. This is rare with good hash functions and proper resizing.
 - **Iteration Order:**
     - Standard hash maps do not guarantee any specific order when iterating over keys. If order matters, consider an ordered variant.
 - **Memory Overhead:**
@@ -116,7 +114,7 @@ Even with a good hash function, collisions are inevitable. Here are two common s
 - **Load Factor:** The ratio of entries to the total number of buckets. A high load factor means more collisions.
 - **Resizing/Rehashing:**
     - When the load factor exceeds a predefined threshold (commonly 0.7–0.75), the hash table is resized (usually doubling in size) and all existing entries are rehashed to new indices.
-    - This operation is typically costly ($O(n)$), but it happens infrequently enough that the amortized cost for insertion remains $O(1)$.
+    - This operation is typically costly ( $O(n)$ ), but it happens infrequently enough that the amortized cost for insertion remains $O(1)$.
 ___
 
 ## LeetCode Questions

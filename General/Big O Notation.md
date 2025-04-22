@@ -101,7 +101,7 @@ function getLastElement<T>(arr: T[]): T | undefined {
 }
 ```
 
-### $O(log n)$ – Logarithmic Time
+### $O(\log(n))$ – Logarithmic Time
 ```ts
 function binarySearch(arr: number[], target: number): number {
   let left = 0;
