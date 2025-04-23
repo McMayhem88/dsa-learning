@@ -38,16 +38,24 @@ There are four key operations for a `heap`:
 - **Extract Max/Min**: Removes the `root` element and returns its value.
 - **Peek**: Returns the `root` element _without_ removing it.
 - **Heapify**: Converts an unsorted array into a `heap`.
-- 
+- **Remove**: Removes a single node from the `heap` and re-orders the affected nodes.
 ___
 
 ## Time/Space Complexity
 
 ### Time Complexity
 - **Insert**: $O(\log(n))$
+  - Adding a new element involves placing it at the end and then “bubbling up” to restore the heap property, which in the worst-case takes logarithmic time.
 - **Remove**: $O(\log(n))$
+  - Removing the `root` requires replacing it with the last element and then “bubbling down” to reheapify, which takes $O(\log(n))$ time in the worst case.
 - **Peek**: $O(1)$
+  - Peeking at the top element (the minimum for a `min‑heap` or maximum for a `max‑heap`) is a constant-time operation since it is stored at index `0`.
 - **Heapify**: $O(n)$
+  - The bottom-up heap construction method achieves a linear running time, despite the fact that each individual “bubble down” can take $O(\log(n))$. This is due to most elements being near the bottom of the tree.
+- **Bubble Up**: $O(\log(n))$
+  - This is the process used in the insert operation to move a newly added element upward until the heap property is restored. In the worst case, it may move from a leaf to the root.
+- **Bubble Down**: $O(\log(n))$
+  - Used after removal (or `heapify`), this operation moves an element down to its correct position in the heap. In the worst case, the element may travel from the root to a leaf, which takes logarithmic time.
 
 ### Space Complexity
 $O(n)$ – You need space proportional to the number of elements, though if you’re sorting in place (heapsort), extra space can be minimized.

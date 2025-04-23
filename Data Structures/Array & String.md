@@ -39,7 +39,7 @@ ___
 - **Insert**: $O(n)$
 - **Delete**: $O(n)$
 - **Search**: $O(n)$
-- **Search** (sorted): $O(log n)$
+- **Search** (sorted): $O(\log(n))$
 
 ### Space Complexity
 
