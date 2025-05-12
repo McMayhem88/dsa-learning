@@ -1,10 +1,6 @@
 # Trie - Starts With
 
-This is an example implementation of a `startsWith()` method within a `Trie` class. 
-
-### Dependencies
-* [TrieNode](Trie%20-%20Node.md) - The node class
-* [BaseTrie](Trie%20-%20Basic.md) - Base Trie class with common functions (insert, find, print, etc.)
+This is an example implementation of a `startsWith()` method within a `Trie` class.
 
 ## Breakdown
 - Checks for empty input string
@@ -14,6 +10,10 @@ This is an example implementation of a `startsWith()` method within a `Trie` cla
 ## TypeScript Implementation
 
 ![trie-basic-example.svg](../_images/trie-basic-example.svg)
+
+### Dependencies
+* [TrieNode](Trie%20-%20Node.md) - The node class
+* [BaseTrie](Trie%20-%20Basic.md) - Base Trie class with common functions (insert, find, print, etc.)
 
 ```ts
 import { TrieNode } from "./trie-node";

@@ -52,8 +52,9 @@ ___
 
 - **Read**: $O(n)$
 - **Search**: $O(n)$ - You need to iterate through every element to find the `kᵗʰ` element
-- **Insert**: $O(1)$
-- **Delete**: $O(1)$
+- **Insert (at `k`)**: $O(n)$ - You need to traverse the list to get to position `k`
+- **Insert (at `head`)**: $O(1)$
+- **Delete Node**: $O(n)$ - You need to traverse the list to find the value
 
 ### Space Complexity
 
@@ -108,132 +109,6 @@ When the size of the dataset frequently changes, using a linked list can be more
 ### Problems Involving Sequential Access
 
 Interview questions that ask you to reverse a list, merge sorted lists, or remove the nth element from the end are all based on linked list manipulations.
-___
-
-## Example Implementation
-
-#### **Singly Linked List**
-```ts
-// Very basic implementation of a singly linked list
-class Node {
-  public next: Node | null = null;
-  public data: number;
-  
-  constructor(d: number) {
-    this.data = d;
-  }
-  
-  appendToTail(d: number): void {
-    const end: Node = new Node(d);
-    let n = this;
-    while (n != null) {
-      n = n.next;
-    }
-    n.next = end;
-  }
-}
-
-// Adds a new node to the head of the linked list
-function insertAtHead(head: Node, d: number): Node {
-  const node: Node = new Node(d);
-  node.next = head;
-  return node; // Node becomes the new head
-}
-
-// Removes a node from a singly linked list and returns the new head
-function deleteNode(head: Node, d: number): Node {
-  if (head === null || head === undefined) {
-    return null;
-  }
-  // Start our search off at the head
-  let n = head;
-  
-  // Check if the head contains the data we are trying to delete
-  if (n.data === d) {
-    return head.next; // Head has moved
-  }
-  
-  // Move up the list until we find the node we are looking for
-  while (n.next !== null) {
-    if (n.next.data === d) {
-      n.next = n.next.next; // Update the `next` node to the node after the deleted node
-      return head; // Head has not changed
-    }
-    n = n.next;
-  }
-  
-  // If we reached this point, there isn't a node with the given data
-  return head;
-}
-
-// Checks to see if a node with the given data exists
-function hasNode(head: Node, d: number) {
-  if (head === null) {
-    return false;
-  }
-  
-  let n: Node = head;
-  if (n.data === d) {
-    return true; // The head node is the one we are looking for
-  }
-  
-  while (n.next !== null) {
-    if (n.next.data === d) {
-      return true;
-    }
-    n = n.next;
-  }
-  
-  return false;
-}
-
-// Returns the node with the given data
-function getNode(head: Node, d: number): Node {
-  if (head === null) {
-    return null;
-  }
-  
-  let n: Node = head;
-  if (n.data === d) {
-    return head;
-  }
-  
-  while (n.next !== null) {
-    if (n.next.data === d) {
-      return n.next;
-    }
-    n = n.next;
-  }
-  // If we reached this point, then the node doesn't exist
-  return null;
-}
-
-// Reverses a singly linked list using an iterative approach
-function reverseLinkedList(head: Node): Node {
-  let prev: Node = null;
-  let current: Node = head;
-  while (current !== null) {
-    const next = current.next; // Hold ref to next node
-    current.next = prev; // Set the current nodes' next to the prev node
-    prev = current; // Set prev node to current node
-    current = next; // Set current node to next node
-  }
-  // `prev` is now the head so we return that
-  return prev;
-}
-
-// Reverses a singly linked list using a recursive approach
-function reverseLinkedListRecursive(current: Node, prev: Node | null = null): Node {
-  if (current === null) {
-    return prev; // This will happen when we reach the end, prev is the new head
-  }
-  const next = current.next;
-  current.next = prev;
-  return reverseLinkedListRecursive(next, current);
-}
-```
-
-This is the most basic way to implement a linked list in that it doesn't declare an actual `LinkedList` data structure, but rather accesses the linked list through a reference to the `head` node. This can be a dangerous approach, however, as multiple objects may need to reference the linked list and could fall out of sync with what the `head` node is. For interview questions, this is often the best approach because it takes less time to develop, and you know your “world” of operations never needs to know or change the `head` reference from multiple points.
 
 ___
 

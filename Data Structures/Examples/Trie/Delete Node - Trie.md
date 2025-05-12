@@ -2,10 +2,6 @@
 
 This is an example implementation of a `delete` method within a `Trie` class. The method uses a nested, recursive method to check the trie for the word and delete and nodes that can be deleted.
 
-### Dependencies
-* [TrieNode](Trie%20-%20Node.md) - The node class
-* [BaseTrie](Trie%20-%20Basic.md) - Base Trie class with common functions (insert, find, print, etc.)
-
 ## Breakdown
 - **Main `delete` Function**
   - Immediately return `false` if the word is empty.
@@ -28,6 +24,10 @@ This is an example implementation of a `delete` method within a `Trie` class. Th
 ## TypeScript Implementation
 
 ![trie-basic-example.svg](../_images/trie-basic-example.svg)
+
+### Dependencies
+* [TrieNode](Trie%20-%20Node.md) - The node class
+* [BaseTrie](Trie%20-%20Basic.md) - Base Trie class with common functions (insert, find, print, etc.)
 
 ```ts
 import { TrieNode } from "./trie-node";

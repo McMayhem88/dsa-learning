@@ -4,9 +4,6 @@
 
 This is a basic implementation of a `Trie` data structure. We define a `TrieNode` class to represent the nodes of the trie and a wrapper class `BaseTrie` to represent the actual trie structure. This implementation contains minimal methods and a print function for debugging.
 
-### Dependencies
-[TrieNode](Trie%20-%20Node.md)
-
 ## Breakdown
 
 - **Root Node**: The `root` node is initialized when the trie itself is instantiated
@@ -24,7 +21,10 @@ This is a basic implementation of a `Trie` data structure. We define a `TrieNode
   - Creates a new instance of the current class
   - Iterates over all the provided words and calls `insert()` on each of them to add them to the trie
 
-### TypeScript Implementation
+## TypeScript Implementation
+
+### Dependencies
+* [TrieNode](Trie%20-%20Node.md) - The node class
 
 ```ts
 import { TrieNode } from "./trie-node";
