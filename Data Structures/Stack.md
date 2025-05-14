@@ -88,47 +88,6 @@ Stacks can be implemented using either an array or a linked list to store items.
     * Requires additional memory for storing pointers
     * Slightly more complex pointer manipulation
 
-```ts
-class MyStack<T> {
-  private top: MyStack.StackNode<T> | null = null;
-
-  public pop(): T | null {
-    if (this.top === null) {
-      return null;
-    }
-    const data: T = this.top.data;
-    this.top = this.top.next;
-    return data;
-  }
-
-  public push(item: T): void {
-    this.top = new MyStack.StackNode<T>(item, this.top);
-  }
-
-  public peek(): T  | null {
-    return this.top.data;
-  }
-  
-  public isEmpty(): boolean {
-    return this.top === null;
-  }
-
-}
-
-// In Java, we would just nest the classes, but in TypeScript we need to do this.
-namespace MyStack {
-  export class StackNode<T> {
-    public data : T;
-    public next : StackNode<T> | null;
-
-    constructor(data: T, next: StackNode<T> | null = null) {
-      this.data = data;
-      this.next = next;
-    }
-  }
-}
-```
-
 ### Array-Based Implementation
 * **Pros**
     * Simple to implement
@@ -136,31 +95,6 @@ namespace MyStack {
 * **Cons**
     * May need to resize when capacity is exceeded (in dynamic arrays)
     * Fixed-size arrays in some languages can lead to overflow if the maximum capacity is reached
-```ts
-class MyStack<T> {
-  private items: T[];
-
-  constructor() {
-    this.items = [];
-  }
-
-  pop(): T | undefined {
-    return this.items.pop();
-  }
-
-  push(item: T): void {
-    this.items.push(item);
-  }
-
-  peek(): T | undefined {
-    return this.items[this.items.length - 1];
-  }
-
-  isEmpty(): boolean {
-    return this.items.length === 0;
-  }
-}
-```
 
 ### Using the Built-In Array Type
 
