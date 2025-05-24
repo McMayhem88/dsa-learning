@@ -1,6 +1,6 @@
 # Breadth-First Search (Iterative) - Trees
 
-![bfs-iterative-tree.svg](../_images/bfs-iterative-tree.svg)
+![bfs-tree.gif](../../_images/bfs-tree.gif)
 
 This is a simple example of an iterative **Breadth-First Search** (BFS) implementation done on a **Binary Search Tree**. The BFS function exists as a member function of the `BinarySearchTree` class and logs each node to the console as it's visited in the traversal.
 
